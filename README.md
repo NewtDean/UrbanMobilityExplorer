@@ -1,73 +1,21 @@
-<h1 align="center">🚲 Urban Mobility Explorer</h1>
+# Urban Mobility Explorer
 
-<p align="center">
-  <strong>地图优先的城市微出行探索器 —— 在一张地图上读懂整座城市的共享单车脉搏。</strong>
-</p>
+**地图优先的城市微出行探索器 —— 在一张地图上读懂整座城市的共享单车脉搏。**
 
-<!-- ─────────────────────────────────────────────────────────────────────────
-  🎬 Demo 视频 — 上传后替换占位链接（见下方说明，二选一）
-───────────────────────────────────────────────────────────────────────── -->
+**Repository:** [github.com/NewtDean/UrbanMobilityExplorer](https://github.com/NewtDean/UrbanMobilityExplorer)
 
-## 🎬 Demo
+![platform](https://img.shields.io/badge/platform-iOS%2018%2B-blue)
+![Swift](https://img.shields.io/badge/Swift-6.0-orange)
+![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-purple)
+![MapKit](https://img.shields.io/badge/maps-MapKit-green)
+![APIs](https://img.shields.io/badge/data-CityBikes%20%2B%20Open--Meteo-lightgrey)
+![No API Key](https://img.shields.io/badge/API%20Key-none-success)
 
-<p align="center">
-  <video
-    src="REPLACE_WITH_DEMO_VIDEO_URL"
-    controls
-    playsinline
-    muted
-    width="100%"
-    style="max-width: 720px; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.12);"
-  >
-    您的浏览器不支持 HTML5 视频，请<a href="REPLACE_WITH_DEMO_VIDEO_URL">点击下载观看</a>。
-  </video>
-</p>
-
-<p align="center">
-  <sub>↑ 将 <code>REPLACE_WITH_DEMO_VIDEO_URL</code> 替换为你的视频直链（全文搜索替换即可）</sub>
-</p>
-
-<details>
-<summary><strong>📎 如何替换视频链接（上传 GitHub 后）</strong></summary>
-
-**方式 A — 推荐：GitHub 附件链接（无需把大文件放进仓库）**
-
-1. 在任意 **Issue** 或 **PR** 的评论框中，将 `demo.mp4` **拖拽进去**并等待上传完成。
-2. 复制生成的链接，形如：  
-   `https://github.com/user-attachments/assets/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
-3. 在本文档中 **全文搜索** `REPLACE_WITH_DEMO_VIDEO_URL`，替换为上述链接（共 **2 处**：`<video src="…">` 与 `<a href="…">`）。
-
-**方式 B — 视频提交进仓库**
-
-1. 将文件放到 [`docs/assets/demo.mp4`](docs/assets/demo.mp4)（可先删除目录下的 `.gitkeep`）。
-2. 将占位符替换为 Raw 地址：  
-   `https://github.com/<你的用户名>/UrbanMobilityExplorer/raw/main/docs/assets/demo.mp4`
-
-**可选封面**：若 `<video>` 在部分环境不显示首帧，可另存一张 `docs/assets/demo-poster.jpg`，在视频上方加一行  
-`<img src="docs/assets/demo-poster.jpg" alt="Demo poster" width="720" />` 作为点击前预览。
-
-</details>
-
----
-
-<p align="center">
-  <img src="https://img.shields.io/badge/platform-iOS%2017%2B-blue" alt="iOS 17+" />
-  <img src="https://img.shields.io/badge/Swift-6.0-orange" alt="Swift 6" />
-  <img src="https://img.shields.io/badge/UI-SwiftUI-purple" alt="SwiftUI" />
-  <img src="https://img.shields.io/badge/maps-MapKit-green" alt="MapKit" />
-  <img src="https://img.shields.io/badge/data-CityBikes%20%2B%20Open--Meteo-lightgrey" alt="APIs" />
-  <img src="https://img.shields.io/badge/API%20Key-none-success" alt="No API Key" />
-</p>
-
-<p align="center">
-  零 API Key · 离线可审 · 分层缓存 · 可测试架构 · 生产级地图 Sheet 编排
-</p>
-
----
+零 API Key · 离线可审 · 分层缓存 · 可测试架构 · 生产级地图 Sheet 编排
 
 ## 目录
 
-- [Demo](#-demo)
+- [运行截图](#运行截图)
 - [这是什么](#这是什么)
 - [为什么值得看](#为什么值得看)
 - [功能全景](#功能全景)
@@ -88,6 +36,18 @@
 - [路线图](#路线图)
 - [项目不足与后续改进](#项目不足与后续改进)
 - [致谢与许可](#致谢与许可)
+
+---
+
+## 运行截图
+
+| 主页面 | 浏览网点 |
+| :---: | :---: |
+| <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-05-20 at 10 51 14" src="https://github.com/user-attachments/assets/ca08b4c9-c373-45df-a9a4-c52fc013236b" /> | <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-05-20 at 10 51 43" src="https://github.com/user-attachments/assets/1bbdc734-098f-458a-9b0f-3dd7f803590e" /> |
+| 网点详情 | 城市选择 |
+| <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-05-20 at 10 52 06" src="https://github.com/user-attachments/assets/cc42d753-4a59-4080-86a6-af2eb833030d" /> | <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-05-20 at 10 52 46" src="https://github.com/user-attachments/assets/59bd29b4-3723-421e-b378-fec832ca76d7" /> |
+| 缩放地图 | 收藏的网点 |
+| <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-05-20 at 10 54 40" src="https://github.com/user-attachments/assets/218a83b9-4673-4b25-92de-29d574a7253d" /> | <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-05-20 at 10 53 20" src="https://github.com/user-attachments/assets/43388ae5-0a62-4ab0-befc-ca7712548658" /> |
 
 ---
 
@@ -212,7 +172,7 @@ ViewModel **只依赖协议**。测试注入 `MockStationProvider` 或 Bundled J
 
 ### 5. 视口筛站：客户端算力换带宽
 
-全量站点进内存（按网络缓存），`mapStations` 由 **可见区域 + 半径** 客户端过滤，地图拖动不触发网络。并防御 Sheet 打开时相机抖动导致 **筛空 Pin** 的边界情况（区域中心漂移阈值 + `restoreMapStationsForMapFocus()`）。
+全量站点进内存（按网络缓存），`mapStations` 由 **MapKit 相机包围盒** 客户端过滤，地图拖动不触发网络。并防御 Sheet 打开时相机抖动导致 **筛空 Pin** 的边界情况（区域中心漂移阈值 + `restoreMapStationsForMapFocus()`）。
 
 ### 6. 离线兜底资源
 
@@ -421,7 +381,6 @@ UrbanMobilityExplorer/
 │   ├── Geo/                # GeoUtilities（距离/视口/region framing）
 │   ├── UI/                 # 可复用组件 & HUD
 │   ├── Networking/
-│   ├── Logging/
 │   └── Preview/            # PreviewData, PreviewHelpers
 └── Resources/              # networks.json, london_stations.json
 
@@ -468,7 +427,7 @@ docs/ADR/                   # 架构决策记录
 ### 运行
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/NewtDean/UrbanMobilityExplorer.git
 cd UrbanMobilityExplorer
 open UrbanMobilityExplorer.xcodeproj
 ```
@@ -649,7 +608,6 @@ All rights reserved.
 
 ---
 
-<p align="center">
-  <sub>Built with SwiftUI · MapKit · SwiftData · structured concurrency</sub><br/>
-  <sub>Urban Mobility Explorer — explore the city, one station at a time.</sub>
-</p>
+*Built with SwiftUI · MapKit · SwiftData · structured concurrency*
+
+*Urban Mobility Explorer — explore the city, one station at a time.*
