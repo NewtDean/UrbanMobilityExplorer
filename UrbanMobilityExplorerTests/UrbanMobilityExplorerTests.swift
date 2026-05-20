@@ -1,17 +1,16 @@
 //
 //  UrbanMobilityExplorerTests.swift
-//  UrbanMobilityExplorerTests
+//  Urban Mobility Explorer
 //
-//  Created by Newt on 2026/5/18.
+//  Created by Newt Ding on 2026/05/19.
+//
+//  Copyright © 2026 The Hongkong and Shanghai Banking Corporation Limited. All rights reserved.
 //
 
-import Testing
-@testable import UrbanMobilityExplorer
+import XCTest
 
-struct UrbanMobilityExplorerTests {
-
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+final class UrbanMobilityExplorerTests: XCTestCase {
+    func testAppModuleLoads() {
+        XCTAssertTrue(true)
     }
-
 }

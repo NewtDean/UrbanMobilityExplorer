@@ -1,0 +1,166 @@
+openapi: 3.0.3
+info:
+  title: CityBike API
+  description: CityBikes public bike-share API (https://api.citybik.es/v2).
+  version: 2.0.0
+servers:
+  - url: https://api.citybik.es/v2
+    description: Production
+
+paths:
+  /networks:
+    get:
+      tags:
+        - networks
+      operationId: listNetworks
+      summary: List all bike-share networks
+      responses:
+        '200':
+          description: Networks list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NetworksResponse'
+
+  /networks/{networkId}:
+    get:
+      tags:
+        - networks
+      operationId: getNetworkStations
+      summary: Network detail with stations
+      parameters:
+        - name: networkId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: fields
+          in: query
+          required: false
+          schema:
+            type: string
+            default: stations
+          description: Comma-separated fields; use `stations` for station list only.
+      responses:
+        '200':
+          description: Network with stations
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NetworkDetailResponse'
+
+components:
+  schemas:
+    NetworksResponse:
+      type: object
+      required:
+        - networks
+      properties:
+        networks:
+          type: array
+          items:
+            $ref: '#/components/schemas/NetworkSummary'
+
+    NetworkSummary:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        location:
+          $ref: '#/components/schemas/Location'
+
+    Location:
+      type: object
+      properties:
+        city:
+          type: string
+        country:
+          type: string
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+
+    NetworkDetailResponse:
+      type: object
+      required:
+        - network
+      properties:
+        network:
+          $ref: '#/components/schemas/NetworkDetail'
+
+    NetworkDetail:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        stations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Station'
+
+    Station:
+      type: object
+      required:
+        - id
+        - name
+        - latitude
+        - longitude
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+        timestamp:
+          type: string
+        free_bikes:
+          type: integer
+        empty_slots:
+          type: integer
+        extra:
+          $ref: '#/components/schemas/StationExtra'
+
+    StationExtra:
+      type: object
+      properties:
+        slots:
+          type: integer
+        address:
+          type: string
+        renting:
+          type: integer
+          description: 1 = open, 0 = closed
+        returning:
+          type: integer
+          description: 1 = open, 0 = closed
+        ebikes:
+          type: integer
+        has_ebikes:
+          type: boolean
+        uid:
+          type: string
+        rental_uris:
+          $ref: '#/components/schemas/RentalURIs'
+
+    RentalURIs:
+      type: object
+      properties:
+        android:
+          type: string
+        ios:
+          type: string

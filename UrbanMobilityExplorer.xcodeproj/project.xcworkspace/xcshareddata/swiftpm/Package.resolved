@@ -1,0 +1,24 @@
+{
+  "originHash" : "e1c65da4b3ea3384802382ceaa035e1990d4af4098e5b66ea33d545b093fb92a",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "7595cbcf59809f9977c5f6378500de2ad73b7ddb",
+        "version" : "5.12.0"
+      }
+    },
+    {
+      "identity" : "progresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/relatedcode/ProgressHUD",
+      "state" : {
+        "revision" : "44e04c79ae75ed5e979df517ab13d8a1aa9b41a5",
+        "version" : "15.0.1"
+      }
+    }
+  ],
+  "version" : 3
+}
